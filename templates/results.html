@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="text-center">
+  <br>
+<br>
+<br>
+  <h4 class="text-center font-weight-bold" style="font-family:luminari fantasy; text-decoration: underline;"> In The News:<br></h4>
+ {% for article in articles %}
+ 
+   <div class="card mx-auto col-sm-6" style="width: 25rem;
+   margin: 8px;">
+    <img src={{article.urlToImage}} class="card-img-top" alt="{{ article.urlToImage }}">
+    <div class="card-body">
+      <h5 class="card-title"> {{ article.title }}</h5>
+      <h7 class="card-text text-muted">Article by:{{ article.author }} of {{ article.source.name }}</h7>
+      <p class="card-text">{{ article.description }}</p>
+      <a href="{{ article.url }}" class="btn btn-danger">Read Full Article ></a>
+    </div>
+  </div>
+  
+  {% endfor %}
+</div>
+
+{% endblock body %} 

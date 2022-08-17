@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="mb-3">
+      <br>
+      <br>
+      <br>
+      <br>
+    <h1 class="text-center font-weight-bold" style="font-family:luminari fantasy; text-decoration: underline;">RELNEWS</h1>
+    <h4 class="text-center" style="font-family:luminari fantasy;">Where you read the news you want</h4>
+    </div>
+    <div class="container">
+      <form action="/" method="POST">
+        <div class="mb-3">
+          <h5>Select <span class="text-danger">Headlines</span>  and Click the button to get immediate news! Or click <span class="text-danger">RelNews</span> and curate your news according to how you want!</h5>
+          <select name="type" class="form-select form-select-mb" aria-label=".form-select-lg example" required>
+            <option value="" >Headlines/RelNews</option>
+            <option value="1">Headlines</option>
+            <option value="2">RelNews</option>            
+          </select>
+          </div>  
+      <div class="mb-3">
+        <label for="topicLabel" class="form-label">News about:</label>
+        <input type="text" class="form-control" id="topic" aria-describedby="topicHelp" name="topic" placeholder="Tesla">
+      </div>
+      <div class="mb-3">
+        <label for="fromDateLabel" class="form-label">From:</label>
+        <input type="date" class="form-control" id="from" aria-describedby="fromHelp" name="from">
+      </div>
+      <div class="mb-3">
+        <label for="toDateLabel" class="form-label">To:</label>
+        <input type="date" class="form-control" id="to" aria-describedby="toHelp" name="to">
+      </div>
+      <div class="col-md-12 text-center">
+     <a href="/results">
+        <button type="submit" class="  btn btn-danger">Get News!</button>
+      </a>
+    </div>
+      
+  </div>
+
+
+  <div class="footer" style="background-color:black; color:aliceblue; margin-top:auto">
+    <select name="ctry" style="float:right;">
+      <option value="in">India</option>
+      <option value="us">USA</option> 
+      <option value="gb">UK</option>     
+      <option value="au">Australia</option>      
+      </select>
+    <p>This website is built using <a href='https://newsapi.org/'>Newsapi</a> by KN</p>
+  </form>
+  </div>
+  {% endblock body %} 
+   
